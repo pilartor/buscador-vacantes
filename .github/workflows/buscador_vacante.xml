@@ -57,7 +57,7 @@ jobs:
           EMAIL_REMITENTE: ${{ secrets.EMAIL_REMITENTE }}
           EMAIL_DESTINATARIO: ${{ secrets.EMAIL_DESTINATARIO }}
           EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
-        run: python buscador_vacantes_v6.py --once
+        run: python main.py --once
 
       # 7. Guardar el archivo actualizado de vacantes vistas
       - name: 💾 Guardar vacantes_vistas.json actualizado
