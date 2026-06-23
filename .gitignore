@@ -1,0 +1,7 @@
+.env
+vacantes_vistas.json
+__pycache__/
+*.pyc
+venv/
+.venv/
+Temp/
