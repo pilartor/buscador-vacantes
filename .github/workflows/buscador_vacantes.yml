@@ -32,17 +32,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
-      # 3. Instalar dependencias
+      # 3. Instalar dependencias (usa caché automático gracias al cache: 'pip' de arriba)
       - name: 📦 Instalar dependencias
-        run: |
-          pip install python-jobspy langdetect pandas schedule python-dotenv
+        run: pip install -r requirements.txt
 
       # 4. Restaurar el archivo de vacantes ya vistas (persistencia entre corridas)
       - name: 💾 Restaurar vacantes_vistas.json
         uses: actions/cache@v4
         with:
-          path: Data/Vacantes_vistas.json
+          path: Data/vacantes_vistas.json
           key: vacantes-vistas-${{ github.run_id }}
           restore-keys: |
             vacantes-vistas-
