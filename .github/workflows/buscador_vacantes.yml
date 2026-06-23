@@ -1,0 +1,68 @@
+name: 🤖 Buscador de Vacantes
+
+on:
+  # ── Ejecución manual desde GitHub (el "botón" desde el celular) ──
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'Modo de ejecución'
+        required: true
+        default: 'once'
+        type: choice
+        options:
+          - once
+
+  # ── Ejecución automática a horarios fijos (hora Argentina = UTC-3) ──
+  schedule:
+    - cron: '0 13 * * 1-5'   # 10:00 AR (lunes a viernes)
+    - cron: '0 18 * * 1-5'   # 15:00 AR (lunes a viernes)
+    - cron: '0 20 * * 1-5'   # 17:00 AR (lunes a viernes)
+
+jobs:
+  buscar-vacantes:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código del repositorio
+      - name: 📥 Checkout del repositorio
+        uses: actions/checkout@v4
+
+      # 2. Configurar Python
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Instalar dependencias
+      - name: 📦 Instalar dependencias
+        run: |
+          pip install python-jobspy langdetect pandas schedule python-dotenv
+
+      # 4. Restaurar el archivo de vacantes ya vistas (persistencia entre corridas)
+      - name: 💾 Restaurar vacantes_vistas.json
+        uses: actions/cache@v4
+        with:
+          path: Data/Vacantes_vistas.json
+          key: vacantes-vistas-${{ github.run_id }}
+          restore-keys: |
+            vacantes-vistas-
+
+      # 5. Crear la carpeta Data si no existe
+      - name: 📁 Crear carpeta Data si no existe
+        run: mkdir -p Data
+
+      # 6. Ejecutar el bot
+      - name: 🚀 Ejecutar buscador de vacantes
+        env:
+          EMAIL_REMITENTE: ${{ secrets.EMAIL_REMITENTE }}
+          EMAIL_DESTINATARIO: ${{ secrets.EMAIL_DESTINATARIO }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+        run: python main.py --once
+
+      # 7. Guardar el archivo actualizado de vacantes vistas
+      - name: 💾 Guardar vacantes_vistas.json actualizado
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: Data/Vacantes_vistas.json
+          key: vacantes-vistas-${{ github.run_id }}
