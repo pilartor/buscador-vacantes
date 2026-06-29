@@ -26,7 +26,7 @@ HORAS_ANTIGUEDAD = 48
 MIN_MATCHES_POR_CATEGORIA = {
     "IDMC":        2,
     "IDMC_SOPORT": 1,
-    "ETL":         1,
+    "ETL":         2,
     "QA":          1,
 }
 DEBUG = True
@@ -51,16 +51,16 @@ TERMINOS = {
     "IDMC": [
         "Informatica Cloud", "IDMC/IICS", "IICS/IDMC",
         "IICS", "IDMC", "CAI", "Informatica Cloud Application Integration",
-        "CDI", "Cloud Data Integration", "powercenter", "ETL", "PowerCenter", "Power Center",
+        "CDI", "Cloud Data Integration", "powercenter", "PowerCenter", "Power Center",
     ],
     "IDMC_SOPORT": [
-        "Informatica Cloud", "Snowflake",
+        "Informatica Cloud",
         "IDMC", "IICS","PowerCenter", "iics", "idmc"
     ],
     "ETL": [
         "ETL/ELT", "ETL", "desarrollador ETL", "Developer ETL",
         "Snowflake", "Medallion", "DWH", "Data Engineer Python",
-        "pipeline de datos", "data pipeline","Data Engineer",
+        "pipeline de datos", "data pipeline","Data Engineer","DataEngineer","pipeline","scraping", "python"
     ],
     "QA": [
         "Data Quality", "Data Governance", "Cloud Migration Engineer",
@@ -77,7 +77,7 @@ PAISES_HISPANOS_REMOTO = [
 PLANES_PAISES = {
     "IDMC":        [("Argentina", False)] + [(p, False) for p in PAISES_HISPANOS_REMOTO],
     "IDMC_SOPORT": [("Argentina", False)] + [(p, True) for p in PAISES_HISPANOS_REMOTO],
-    "ETL":         [("Argentina", False)] + [(p, True) for p in PAISES_HISPANOS_REMOTO],
+    "ETL":         [("Argentina", False)] ,
     "QA":          [("Argentina", False)],
 }
 
