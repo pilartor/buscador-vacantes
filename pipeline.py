@@ -36,6 +36,7 @@ def ejecutar_corrida():
     # ── Paso 2: extraer + transformar, por categoría ──
     todas_calificadas = []
     todas_rechazadas = []
+    vistos_corrida = set()
 
     for categoria in TERMINOS.keys():
         print(f"\n--- Categoría: {categoria} ---")
@@ -43,8 +44,11 @@ def ejecutar_corrida():
         crudas = extraer_jobs_categoria(categoria)
         print(f"  Crudas: {len(crudas)}")
 
-        calificadas, rechazadas = transformar_categoria(crudas, categoria)
+        calificadas, rechazadas = transformar_categoria(crudas, categoria,vistos_corrida)
         print(f"  Calificadas: {len(calificadas)} | Rechazadas (AR, casi califican): {len(rechazadas)}")
+
+        vistos_corrida.update(v["url"] for v in calificadas)   
+        vistos_corrida.update(v["url"] for v in rechazadas)    
 
         todas_calificadas.extend(calificadas)
         todas_rechazadas.extend(rechazadas)

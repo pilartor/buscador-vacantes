@@ -78,7 +78,7 @@ def es_espanol(texto):
 
     palabras_es = [
         "beneficios", "prestaciones", "vacante", "equipo",
-        "experiencia", "postularse", "desarrollo",
+        "experiencia", "postularse", "desarrollo","cuenta","llevamos"
     ]
     contiene_es = any(p in texto.lower() for p in palabras_es)
 
@@ -117,7 +117,7 @@ def es_remoto_real(ubicacion, descripcion, is_remote_flag):
 
 
 # ─────────────────────────────────────────────
-def transformar_categoria(vacantes_crudas, categoria):
+def transformar_categoria(vacantes_crudas, categoria,vistos_corrida=None):
     """
     Función principal de este módulo.
 
@@ -142,6 +142,8 @@ def transformar_categoria(vacantes_crudas, categoria):
                       del mínimo. Sirven para revisar manualmente
                       "casi califican".
     """
+    if vistos_corrida is None:
+        vistos_corrida = set()
     terminos = TERMINOS[categoria]
     min_matches = MIN_MATCHES_POR_CATEGORIA[categoria]
     plan = CATEGORIA_A_PLAN[categoria]
@@ -190,11 +192,15 @@ def transformar_categoria(vacantes_crudas, categoria):
             continue
 
         remoto = es_remoto_real(ubicacion, descripcion, is_remote_flag)
-
+        
         # Vacantes fuera de Argentina que NO son remotas se descartan
-        if pais != "Argentina" and not remoto:
+        #if pais != "Argentina" and not remoto:
+        #    continue
+        if url in vistos_corrida:
+            if DEBUG:
+                print(f"      ✗ DUPLICADO EN CORRIDA -> '{titulo}'")
             continue
-
+        
         calificadas.append({
             "plan":            plan,
             "categoria":       categoria,

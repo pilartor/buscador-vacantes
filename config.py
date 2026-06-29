@@ -75,7 +75,7 @@ PAISES_HISPANOS_REMOTO = [
 ]
 
 PLANES_PAISES = {
-    "IDMC":        [("Argentina", False)] + [(p, True) for p in PAISES_HISPANOS_REMOTO],
+    "IDMC":        [("Argentina", False)] + [(p, False) for p in PAISES_HISPANOS_REMOTO],
     "IDMC_SOPORT": [("Argentina", False)] + [(p, True) for p in PAISES_HISPANOS_REMOTO],
     "ETL":         [("Argentina", False)] + [(p, True) for p in PAISES_HISPANOS_REMOTO],
     "QA":          [("Argentina", False)],
