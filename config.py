@@ -49,9 +49,9 @@ CATEGORIA_A_PLAN = {
 
 TERMINOS = {
     "IDMC": [
-        "Data Engineer", "Informatica Cloud", "IDMC/IICS", "IICS/IDMC",
+        "Informatica Cloud", "IDMC/IICS", "IICS/IDMC",
         "IICS", "IDMC", "CAI", "Informatica Cloud Application Integration",
-        "CDI", "Cloud Data Integration", "Snowflake", "powercenter", "ETL", "PowerCenter", "Power Center",
+        "CDI", "Cloud Data Integration", "powercenter", "ETL", "PowerCenter", "Power Center",
     ],
     "IDMC_SOPORT": [
         "Informatica Cloud", "Snowflake",
@@ -60,7 +60,7 @@ TERMINOS = {
     "ETL": [
         "ETL/ELT", "ETL", "desarrollador ETL", "Developer ETL",
         "Snowflake", "Medallion", "DWH", "Data Engineer Python",
-        "pipeline de datos", "data pipeline",
+        "pipeline de datos", "data pipeline","Data Engineer",
     ],
     "QA": [
         "Data Quality", "Data Governance", "Cloud Migration Engineer",
