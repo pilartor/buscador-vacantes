@@ -42,9 +42,9 @@ HORARIOS_EJECUCION = ["10:00", "15:00", "17:00"]
 # ─────────────────────────────────────────────
 CATEGORIA_A_PLAN = {
     "IDMC":        "A",
-    "IDMC_SOPORT": "A",
-    "ETL":         "B",
-    "QA":          "C",
+    "IDMC_SOPORT": "B",
+    "ETL":         "C",
+    "QA":          "D",
 }
 
 TERMINOS = {
@@ -53,7 +53,7 @@ TERMINOS = {
         "IICS", "iics","idmc","IDMC", "CAI", "Informatica Cloud Application Integration",
         "CDI", "Cloud Data Integration", "powercenter", "PowerCenter", "Power Center",
     ],
-    "IDMC_SOPORT": [
+    "SOPORT": [
         "ETL",
         "ELT", "SQL","monitoreo", "user FTP", "administracion","soporte","desarrollo de pipelines"
     ],
@@ -76,7 +76,7 @@ PAISES_HISPANOS_REMOTO = [
 
 PLANES_PAISES = {
     "IDMC":        [("Argentina", False)] + [(p, False) for p in PAISES_HISPANOS_REMOTO],
-    "IDMC_SOPORT": [("Argentina", False)] + [(p, True) for p in PAISES_HISPANOS_REMOTO],
+    "SOPORT":      [("Argentina", False)] ,
     "ETL":         [("Argentina", False)] ,
     "QA":          [("Argentina", False)],
 }
