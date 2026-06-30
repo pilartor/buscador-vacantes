@@ -169,7 +169,7 @@ def transformar_categoria(vacantes_crudas, categoria,vistos_corrida=None):
                 print(f"      ✗ DESCARTADO ({hits} match: {matched}) -> '{titulo}'")
 
             # Capturar "casi califican" SOLO para Argentina y en español
-            if pais == "Argentina" and hits >= 1 and es_espanol(descripcion):
+            if pais == "Argentina" and hits >= 2 and es_espanol(descripcion):
                 rechazadas.append({
                     "plan":           plan,
                     "categoria":      categoria,

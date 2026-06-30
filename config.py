@@ -24,10 +24,10 @@ EMAIL_ASUNTO_RECHAZADAS = "Vacantes rechazadas (Argentina, casi califican)"
 CANTIDAD_POR_BUSQUEDA = 25
 HORAS_ANTIGUEDAD = 48
 MIN_MATCHES_POR_CATEGORIA = {
-    "IDMC":        2,
+    "IDMC":        1,
     "SOPORT":      3,
     "ETL":         2,
-    "QA":          1,
+    "QA":          2,
 }
 DEBUG = True
 
@@ -54,18 +54,21 @@ TERMINOS = {
         "CDI", "Cloud Data Integration", "powercenter", "PowerCenter", "Power Center",
     ],
     "SOPORT": [
-        "ETL",
-        "ELT", "SQL","monitoreo", "user FTP", "administracion","soporte","desarrollo de pipelines"
+        "ETL","ELT", "SQL","monitoreo", "user FTP", 
+        "administracion","soporte","desarrollo de pipelines"
     ],
     "ETL": [
         "ETL/ELT", "ETL", "desarrollador ETL", "Developer ETL",
         "Snowflake", "Medallion", "DWH", "Data Engineer Python",
-        "pipeline de datos", "data pipeline","Data Engineer","DataEngineer","pipeline","scraping", "python"
+        "pipeline de datos", "data pipeline","Data Engineer","DataEngineer","pipeline","scraping",
+        "Data Integration", "Integración de datos", "python"
     ],
     "QA": [
         "Data Quality", "Data Governance", "Cloud Migration Engineer",
         "Data Validation", "QA Data", "Data Steward",
         "Validación de datos", "Gobierno de Datos","iics","idmc","PowerCenter",
+        "Data Steward", "Validación de datos", 
+        "Calidad de datos", "Analyst", "Master Data Management", "MDM",
     ],
 }
 
