@@ -15,7 +15,7 @@ SITIOS_BUSQUEDA = ["linkedin", "indeed"]
 EMAIL_APP_PASSWORD = os.getenv("EMAIL_APP_PASSWORD")
 EMAIL_REMITENTE = os.getenv("EMAIL_REMITENTE")
 EMAIL_DESTINATARIO = os.getenv("EMAIL_REMITENTE")
-EMAIL_ASUNTO       = "Vacantes nuevas - Plan A/B/C"
+EMAIL_ASUNTO       = "Vacantes nuevas - Plan A/B/C/D"
 EMAIL_ASUNTO_RECHAZADAS = "Vacantes rechazadas (Argentina, casi califican)"
 
 # ─────────────────────────────────────────────
@@ -25,7 +25,7 @@ CANTIDAD_POR_BUSQUEDA = 25
 HORAS_ANTIGUEDAD = 48
 MIN_MATCHES_POR_CATEGORIA = {
     "IDMC":        2,
-    "IDMC_SOPORT": 3,
+    "SOPORT":      3,
     "ETL":         2,
     "QA":          1,
 }
@@ -42,7 +42,7 @@ HORARIOS_EJECUCION = ["10:00", "15:00", "17:00"]
 # ─────────────────────────────────────────────
 CATEGORIA_A_PLAN = {
     "IDMC":        "A",
-    "IDMC_SOPORT": "B",
+    "SOPORT":      "B",
     "ETL":         "C",
     "QA":          "D",
 }

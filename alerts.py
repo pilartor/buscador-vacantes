@@ -62,13 +62,14 @@ def construir_html(calificadas):
     total_a = sum(1 for v in calificadas if v["plan"] == "A")
     total_b = sum(1 for v in calificadas if v["plan"] == "B")
     total_c = sum(1 for v in calificadas if v["plan"] == "C")
+    total_d = sum(1 for v in calificadas if v["plan"] == "D")
 
     html = f"""
     <html>
     <body style="font-family: Arial, sans-serif;">
         <h2>Vacantes NUEVAS encontradas</h2>
         <p>Total: {len(calificadas)} vacantes nuevas
-        (Plan A: {total_a}, Plan B: {total_b}, Plan C: {total_c})</p>
+        (Plan A: {total_a}, Plan B: {total_b}, Plan C: {total_c}, Plan D: {total_d})</p>
         <table style="border-collapse: collapse; width: 100%; font-size: 13px;">
             <thead>
                 <tr style="background-color:#1F4E79; color:white;">
