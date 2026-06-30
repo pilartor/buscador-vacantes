@@ -25,7 +25,7 @@ CANTIDAD_POR_BUSQUEDA = 25
 HORAS_ANTIGUEDAD = 48
 MIN_MATCHES_POR_CATEGORIA = {
     "IDMC":        2,
-    "IDMC_SOPORT": 1,
+    "IDMC_SOPORT": 3,
     "ETL":         2,
     "QA":          1,
 }
@@ -50,12 +50,12 @@ CATEGORIA_A_PLAN = {
 TERMINOS = {
     "IDMC": [
         "Informatica Cloud", "IDMC/IICS", "IICS/IDMC",
-        "IICS", "IDMC", "CAI", "Informatica Cloud Application Integration",
+        "IICS", "iics","idmc","IDMC", "CAI", "Informatica Cloud Application Integration",
         "CDI", "Cloud Data Integration", "powercenter", "PowerCenter", "Power Center",
     ],
     "IDMC_SOPORT": [
-        "Informatica Cloud",
-        "IDMC", "IICS","PowerCenter", "iics", "idmc"
+        "ETL",
+        "ELT", "SQL","monitoreo", "user FTP", "administracion","soporte","desarrollo de pipelines"
     ],
     "ETL": [
         "ETL/ELT", "ETL", "desarrollador ETL", "Developer ETL",
